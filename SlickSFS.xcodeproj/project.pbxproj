@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26CB55C3DD306BB535725C4C /* Pods_SlickSFS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C672050827680EB66E5291B8 /* Pods_SlickSFS.framework */; };
 		935D7F4720B4A8C000F5550B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F4620B4A8C000F5550B /* AppDelegate.swift */; };
 		935D7F4920B4A8C000F5550B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F4820B4A8C000F5550B /* ViewController.swift */; };
 		935D7F4C20B4A8C000F5550B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F4A20B4A8C000F5550B /* Main.storyboard */; };
@@ -26,9 +27,15 @@
 		935D7F7220B4AD8900F5550B /* JFKAirportLocationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */; };
 		935D7F7320B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */; };
 		935D7F7420B4AD8900F5550B /* AirportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7120B4AD8900F5550B /* AirportProtocol.swift */; };
+		935D7F7620B4AE9600F5550B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F7520B4AE9600F5550B /* Podfile */; };
+		935D7F7920B4AFBB00F5550B /* LocationValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7720B4AFBA00F5550B /* LocationValidatorProtocol.swift */; };
+		935D7F7A20B4AFBB00F5550B /* Locateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7820B4AFBA00F5550B /* Locateable.swift */; };
+		935D7F7C20B4B09200F5550B /* ErrorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7B20B4B09200F5550B /* ErrorConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E850686FED02F961858C920 /* Pods-SlickSFS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlickSFS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS.debug.xcconfig"; sourceTree = "<group>"; };
+		897EBE45F11BE8B1B1E1E7B9 /* Pods-SlickSFS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlickSFS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS.release.xcconfig"; sourceTree = "<group>"; };
 		935D7F4320B4A8C000F5550B /* SlickSFS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlickSFS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		935D7F4620B4A8C000F5550B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		935D7F4820B4A8C000F5550B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +57,11 @@
 		935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFKAirportLocationValidator.swift; sourceTree = "<group>"; };
 		935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaGuardiaAirportLocationValidator.swift; sourceTree = "<group>"; };
 		935D7F7120B4AD8900F5550B /* AirportProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportProtocol.swift; sourceTree = "<group>"; };
+		935D7F7520B4AE9600F5550B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		935D7F7720B4AFBA00F5550B /* LocationValidatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationValidatorProtocol.swift; sourceTree = "<group>"; };
+		935D7F7820B4AFBA00F5550B /* Locateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locateable.swift; sourceTree = "<group>"; };
+		935D7F7B20B4B09200F5550B /* ErrorConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConstant.swift; sourceTree = "<group>"; };
+		C672050827680EB66E5291B8 /* Pods_SlickSFS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlickSFS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +69,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26CB55C3DD306BB535725C4C /* Pods_SlickSFS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BCD49977C7BABB26038C39C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C672050827680EB66E5291B8 /* Pods_SlickSFS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		935D7F3A20B4A8C000F5550B = {
 			isa = PBXGroup;
 			children = (
-				935D7F4520B4A8C000F5550B /* SlickSFS */,
+				935D7F7520B4AE9600F5550B /* Podfile */,
 				935D7F4420B4A8C000F5550B /* Products */,
+				935D7F4520B4A8C000F5550B /* SlickSFS */,
+				AB6C3DF39F68C69C5E42973F /* Pods */,
+				1BCD49977C7BABB26038C39C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,9 +122,12 @@
 			children = (
 				935D7F7120B4AD8900F5550B /* AirportProtocol.swift */,
 				935D7F6B20B4AC4000F5550B /* Coordinate.swift */,
+				935D7F7B20B4B09200F5550B /* ErrorConstant.swift */,
 				935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */,
 				935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */,
+				935D7F7820B4AFBA00F5550B /* Locateable.swift */,
 				935D7F6720B4ABAE00F5550B /* Location.swift */,
+				935D7F7720B4AFBA00F5550B /* LocationValidatorProtocol.swift */,
 				935D7F6620B4ABAE00F5550B /* NetworkClient.swift */,
 				935D7F6520B4ABAE00F5550B /* Result.swift */,
 				935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */,
@@ -114,6 +141,15 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		AB6C3DF39F68C69C5E42973F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E850686FED02F961858C920 /* Pods-SlickSFS.debug.xcconfig */,
+				897EBE45F11BE8B1B1E1E7B9 /* Pods-SlickSFS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 935D7F5520B4A8C000F5550B /* Build configuration list for PBXNativeTarget "SlickSFS" */;
 			buildPhases = (
+				6770B1F043AAF05DDC8ED685 /* [CP] Check Pods Manifest.lock */,
 				935D7F3F20B4A8C000F5550B /* Sources */,
 				935D7F4020B4A8C000F5550B /* Frameworks */,
 				935D7F4120B4A8C000F5550B /* Resources */,
+				8F5859045A2D3EBA99AB9FEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,11 +213,51 @@
 			files = (
 				935D7F5120B4A8C000F5550B /* LaunchScreen.storyboard in Resources */,
 				935D7F4E20B4A8C000F5550B /* Assets.xcassets in Resources */,
+				935D7F7620B4AE9600F5550B /* Podfile in Resources */,
 				935D7F4C20B4A8C000F5550B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6770B1F043AAF05DDC8ED685 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlickSFS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F5859045A2D3EBA99AB9FEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		935D7F3F20B4A8C000F5550B /* Sources */ = {
@@ -187,11 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				935D7F6820B4ABAE00F5550B /* Result.swift in Sources */,
+				935D7F7C20B4B09200F5550B /* ErrorConstant.swift in Sources */,
 				935D7F6A20B4ABAE00F5550B /* Location.swift in Sources */,
+				935D7F7920B4AFBB00F5550B /* LocationValidatorProtocol.swift in Sources */,
 				935D7F6920B4ABAE00F5550B /* NetworkClient.swift in Sources */,
 				935D7F7420B4AD8900F5550B /* AirportProtocol.swift in Sources */,
 				935D7F6020B4AB0C00F5550B /* SimpleAlertActionModel.swift in Sources */,
 				935D7F4920B4A8C000F5550B /* ViewController.swift in Sources */,
+				935D7F7A20B4AFBB00F5550B /* Locateable.swift in Sources */,
 				935D7F7320B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift in Sources */,
 				935D7F4720B4A8C000F5550B /* AppDelegate.swift in Sources */,
 				935D7F6E20B4AC4000F5550B /* String+Range.swift in Sources */,
@@ -336,6 +417,7 @@
 		};
 		935D7F5620B4A8C000F5550B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E850686FED02F961858C920 /* Pods-SlickSFS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +433,7 @@
 		};
 		935D7F5720B4A8C000F5550B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 897EBE45F11BE8B1B1E1E7B9 /* Pods-SlickSFS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

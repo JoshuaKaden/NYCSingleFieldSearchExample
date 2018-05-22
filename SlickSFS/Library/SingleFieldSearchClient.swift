@@ -10,7 +10,7 @@ import Foundation
 
 protocol SingleFieldSearchClientProtocol {
     static func baseURL() -> URL
-    func performSingleFieldSearchOnLocations(_ locations: [Location], shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction)
+    func performSingleFieldSearchOnLocation(_ location: Location, shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction)
 }
 
 typealias SingleFieldSearchCompletionAction = (Result<[Location]>) -> Void
@@ -29,42 +29,7 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
         return URL(string: "https://api.cityofnewyork.us/geoclient/v1/")!
     }
     
-    func performSingleFieldSearchOnLocations(_ locations: [Location], shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction) {
-        if locations.isEmpty {
-            completion(.error(ErrorConstant.geocoderNoResults.newNSError()))
-            return
-        }
-        
-        if locations.count == 1 {
-            let location = locations.first!
-            self.performSingleFieldSearchOnLocation(location, shouldPreValidate: shouldPreValidate, completion: completion)
-            return
-        }
-        
-        var resultSet : Set<Location> = []
-        
-        for location in locations {
-            
-            let result = self.networkClient.syncGET(self.urlString, parameters: self.buildParametersFromLocation(location))
-            switch result {
-            case .error(_):
-                // no op
-                break
-                
-            case let .success(response):
-                guard let response: [AnyHashable : Any] = response as? [AnyHashable: Any] else { break }
-                let resultLocations = self.buildLocationsFromResponse(response, sourceLocation: location, shouldPreValidate: shouldPreValidate)
-                for resultLocation in resultLocations {
-                    resultSet.insert(resultLocation)
-                }
-            }
-        }
-        
-        let results : [Location] = Array(resultSet)
-        completion(.success(results))
-    }
-    
-    fileprivate func performSingleFieldSearchOnLocation(_ location: Location, shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction) {
+    func performSingleFieldSearchOnLocation(_ location: Location, shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction) {
         let parameters = self.buildParametersFromLocation(location)
         
         networkClient.GET(urlString, parameters: parameters) {
