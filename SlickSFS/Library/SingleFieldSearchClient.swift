@@ -10,6 +10,7 @@ import Foundation
 
 protocol SingleFieldSearchClientProtocol {
     static func baseURL() -> URL
+    func performSingleFieldSearch(_ text: String?, completion: @escaping SingleFieldSearchCompletionAction)
     func performSingleFieldSearchOnLocation(_ location: Location, shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction)
 }
 
@@ -29,6 +30,24 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
         return URL(string: "https://api.cityofnewyork.us/geoclient/v1/")!
     }
     
+    func performSingleFieldSearch(_ text: String?, completion: @escaping SingleFieldSearchCompletionAction) {
+        guard let text = text else {
+            completion(.error(ErrorConstant.geocoderNoResults.newNSError()))
+            return
+        }
+        let parameters = buildParametersFromText(text)
+        networkClient.GET(urlString, parameters: parameters) {
+            result in
+            switch result {
+            case let .success(response):
+                let locations = self.buildLocationsFromResponse(response, shouldPreValidate: false)
+                completion(.success(locations))
+            case let .error(error):
+                completion(.error(error))
+            }
+        }
+    }
+    
     func performSingleFieldSearchOnLocation(_ location: Location, shouldPreValidate: Bool, completion: @escaping SingleFieldSearchCompletionAction) {
         let parameters = self.buildParametersFromLocation(location)
         
@@ -41,7 +60,7 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
 //                    completion(.Error(error))
 //                    return
 //                }
-                let locations = self.buildLocationsFromResponse(response, sourceLocation: location, shouldPreValidate: shouldPreValidate)
+                let locations = self.buildLocationsFromResponse(response, shouldPreValidate: shouldPreValidate)
                 completion(.success(locations))
             case let .error(error):
                 completion(.error(error))
@@ -55,7 +74,11 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
         return ["input" as NSObject : searchString as AnyObject, "app_id" as NSObject : self.appID as AnyObject, "app_key" as NSObject : self.appKey as AnyObject]
     }
     
-    fileprivate func buildLocationsFromResponse(_ response: ObjcDictionary, sourceLocation: Location, shouldPreValidate: Bool) -> [Location] {
+    fileprivate func buildParametersFromText(_ text: String) -> ObjcDictionary {
+        return ["input" as NSObject : text as AnyObject, "app_id" as NSObject : self.appID as AnyObject, "app_key" as NSObject : self.appKey as AnyObject]
+    }
+    
+    fileprivate func buildLocationsFromResponse(_ response: ObjcDictionary, shouldPreValidate: Bool) -> [Location] {
         // Find the top-level dictionary of results.
         guard let resultsList = response["results"] as? [[AnyHashable : AnyObject]] else { return [] }
         
@@ -63,7 +86,6 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
         for result in resultsList {
             guard let addressData: ObjcDictionary = result["response"] as? ObjcDictionary else { break }
             
-            //            let coordinate = sourceLocation.coordinate
             let latitudeRaw = addressData["latitudeInternalLabel"] ?? addressData["latitude"] ?? 0
             let longitudeRaw = addressData["longitudeInternalLabel"] ?? addressData["longitude"] ?? 0
             
@@ -91,7 +113,25 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
                 let secondStreetName = addressData["secondStreetNameNormalized"] as? String ?? ""
                 let zipCode = addressData["zipCode"] as? String ?? ""
                 
-                locations.insert(Location(borough: borough, coordinate: coordinate, firstStreetName: firstStreetName, houseNumber: houseNumber, secondStreetName: secondStreetName, zipCode: zipCode))
+                var lines: [String] = []
+                if !houseNumber.isEmpty && !firstStreetName.isEmpty {
+                    lines.append("\(houseNumber) \(firstStreetName)")
+                } else if !firstStreetName.isEmpty && !secondStreetName.isEmpty {
+                    lines.append("\(firstStreetName) & \(secondStreetName)")
+                }
+                
+                if !borough.isEmpty && !zipCode.isEmpty {
+                    lines.append("\(borough), \(zipCode)")
+                } else {
+                    if !borough.isEmpty {
+                        lines.append(borough)
+                    }
+                    if !zipCode.isEmpty {
+                        lines.append(zipCode)
+                    }
+                }
+                
+                locations.insert(Location(borough: borough, coordinate: coordinate, firstStreetName: firstStreetName, formattedAddressLines: lines, houseNumber: houseNumber, secondStreetName: secondStreetName, zipCode: zipCode))
             }
         }
         

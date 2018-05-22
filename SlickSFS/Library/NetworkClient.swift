@@ -24,7 +24,12 @@ struct NetworkClient: NetworkClientProtocol {
     
     init(baseURL: URL) {
         requestOperationManager = AFHTTPSessionManager(baseURL: baseURL)
-        requestOperationManager.securityPolicy.allowInvalidCertificates = true
+        
+        let policy = AFSecurityPolicy(pinningMode: .none)
+        policy.allowInvalidCertificates = true
+        policy.validatesDomainName = false
+        requestOperationManager.securityPolicy = policy
+        
         self.baseURL = baseURL
     }
     
