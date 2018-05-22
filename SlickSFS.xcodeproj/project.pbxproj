@@ -12,6 +12,20 @@
 		935D7F4C20B4A8C000F5550B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F4A20B4A8C000F5550B /* Main.storyboard */; };
 		935D7F4E20B4A8C000F5550B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F4D20B4A8C000F5550B /* Assets.xcassets */; };
 		935D7F5120B4A8C000F5550B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F4F20B4A8C000F5550B /* LaunchScreen.storyboard */; };
+		935D7F5F20B4AB0C00F5550B /* SimpleAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5920B4AB0C00F5550B /* SimpleAlertModel.swift */; };
+		935D7F6020B4AB0C00F5550B /* SimpleAlertActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */; };
+		935D7F6120B4AB0C00F5550B /* SingleFieldSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */; };
+		935D7F6220B4AB0C00F5550B /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5C20B4AB0C00F5550B /* UIViewController+SimpleAlert.swift */; };
+		935D7F6320B4AB0C00F5550B /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5D20B4AB0C00F5550B /* UIView+Layout.swift */; };
+		935D7F6420B4AB0C00F5550B /* UIViewController+Parenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F5E20B4AB0C00F5550B /* UIViewController+Parenting.swift */; };
+		935D7F6820B4ABAE00F5550B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6520B4ABAE00F5550B /* Result.swift */; };
+		935D7F6920B4ABAE00F5550B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6620B4ABAE00F5550B /* NetworkClient.swift */; };
+		935D7F6A20B4ABAE00F5550B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6720B4ABAE00F5550B /* Location.swift */; };
+		935D7F6D20B4AC4000F5550B /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6B20B4AC4000F5550B /* Coordinate.swift */; };
+		935D7F6E20B4AC4000F5550B /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6C20B4AC4000F5550B /* String+Range.swift */; };
+		935D7F7220B4AD8900F5550B /* JFKAirportLocationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */; };
+		935D7F7320B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */; };
+		935D7F7420B4AD8900F5550B /* AirportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F7120B4AD8900F5550B /* AirportProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +36,20 @@
 		935D7F4D20B4A8C000F5550B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		935D7F5020B4A8C000F5550B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		935D7F5220B4A8C000F5550B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		935D7F5920B4AB0C00F5550B /* SimpleAlertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAlertModel.swift; sourceTree = "<group>"; };
+		935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAlertActionModel.swift; sourceTree = "<group>"; };
+		935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleFieldSearchClient.swift; sourceTree = "<group>"; };
+		935D7F5C20B4AB0C00F5550B /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
+		935D7F5D20B4AB0C00F5550B /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		935D7F5E20B4AB0C00F5550B /* UIViewController+Parenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Parenting.swift"; sourceTree = "<group>"; };
+		935D7F6520B4ABAE00F5550B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		935D7F6620B4ABAE00F5550B /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		935D7F6720B4ABAE00F5550B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		935D7F6B20B4AC4000F5550B /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		935D7F6C20B4AC4000F5550B /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
+		935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFKAirportLocationValidator.swift; sourceTree = "<group>"; };
+		935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaGuardiaAirportLocationValidator.swift; sourceTree = "<group>"; };
+		935D7F7120B4AD8900F5550B /* AirportProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +83,35 @@
 			isa = PBXGroup;
 			children = (
 				935D7F4620B4A8C000F5550B /* AppDelegate.swift */,
-				935D7F4820B4A8C000F5550B /* ViewController.swift */,
-				935D7F4A20B4A8C000F5550B /* Main.storyboard */,
 				935D7F4D20B4A8C000F5550B /* Assets.xcassets */,
-				935D7F4F20B4A8C000F5550B /* LaunchScreen.storyboard */,
 				935D7F5220B4A8C000F5550B /* Info.plist */,
+				935D7F4F20B4A8C000F5550B /* LaunchScreen.storyboard */,
+				935D7F5820B4AA8100F5550B /* Library */,
+				935D7F4A20B4A8C000F5550B /* Main.storyboard */,
+				935D7F4820B4A8C000F5550B /* ViewController.swift */,
 			);
 			path = SlickSFS;
+			sourceTree = "<group>";
+		};
+		935D7F5820B4AA8100F5550B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				935D7F7120B4AD8900F5550B /* AirportProtocol.swift */,
+				935D7F6B20B4AC4000F5550B /* Coordinate.swift */,
+				935D7F6F20B4AD8900F5550B /* JFKAirportLocationValidator.swift */,
+				935D7F7020B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift */,
+				935D7F6720B4ABAE00F5550B /* Location.swift */,
+				935D7F6620B4ABAE00F5550B /* NetworkClient.swift */,
+				935D7F6520B4ABAE00F5550B /* Result.swift */,
+				935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */,
+				935D7F5920B4AB0C00F5550B /* SimpleAlertModel.swift */,
+				935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */,
+				935D7F6C20B4AC4000F5550B /* String+Range.swift */,
+				935D7F5D20B4AB0C00F5550B /* UIView+Layout.swift */,
+				935D7F5E20B4AB0C00F5550B /* UIViewController+Parenting.swift */,
+				935D7F5C20B4AB0C00F5550B /* UIViewController+SimpleAlert.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +186,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935D7F6820B4ABAE00F5550B /* Result.swift in Sources */,
+				935D7F6A20B4ABAE00F5550B /* Location.swift in Sources */,
+				935D7F6920B4ABAE00F5550B /* NetworkClient.swift in Sources */,
+				935D7F7420B4AD8900F5550B /* AirportProtocol.swift in Sources */,
+				935D7F6020B4AB0C00F5550B /* SimpleAlertActionModel.swift in Sources */,
 				935D7F4920B4A8C000F5550B /* ViewController.swift in Sources */,
+				935D7F7320B4AD8900F5550B /* LaGuardiaAirportLocationValidator.swift in Sources */,
 				935D7F4720B4A8C000F5550B /* AppDelegate.swift in Sources */,
+				935D7F6E20B4AC4000F5550B /* String+Range.swift in Sources */,
+				935D7F5F20B4AB0C00F5550B /* SimpleAlertModel.swift in Sources */,
+				935D7F6120B4AB0C00F5550B /* SingleFieldSearchClient.swift in Sources */,
+				935D7F6320B4AB0C00F5550B /* UIView+Layout.swift in Sources */,
+				935D7F6420B4AB0C00F5550B /* UIViewController+Parenting.swift in Sources */,
+				935D7F6220B4AB0C00F5550B /* UIViewController+SimpleAlert.swift in Sources */,
+				935D7F6D20B4AC4000F5550B /* Coordinate.swift in Sources */,
+				935D7F7220B4AD8900F5550B /* JFKAirportLocationValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
