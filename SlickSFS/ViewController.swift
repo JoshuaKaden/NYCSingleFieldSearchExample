@@ -36,11 +36,6 @@ class ViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        searchController.searchBar.y = 24
-    }
-
 }
 
 extension ViewController: UISearchResultsUpdating {
@@ -75,7 +70,9 @@ extension ViewController: UITableViewDataSource {
         
         let location = locations[indexPath.row]
         cell.textLabel?.text = location.formattedAddressLines[0]
-        cell.detailTextLabel?.text = location.formattedAddressLines[1]
+        if location.formattedAddressLines.count > 1 {
+            cell.detailTextLabel?.text = location.formattedAddressLines[1]
+        }
         
         return cell
     }
