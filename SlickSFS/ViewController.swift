@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     private var isSearching = false
-    private var locations: [Location] = []
-    private let resultsViewController = UITableViewController()
+    private let mapViewController = MapViewController()
+    private let resultsViewController = ResultsViewController()
     private let searchController: UISearchController
+    private var selectedLocation: Location?
     private let singleFieldSearchClient = SingleFieldSearchClient()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -31,13 +32,19 @@ class ViewController: UIViewController {
         
         definesPresentationContext = true
         
-        resultsViewController.tableView.dataSource = self
-        
-        searchController.searchResultsUpdater = self
+        resultsViewController.delegate = self
         
         searchController.searchBar.delegate = self
         searchController.searchBar.returnKeyType = .done
         view.addSubview(searchController.searchBar)
+        
+        searchController.searchResultsUpdater = self
+        
+        adoptChildViewController(mapViewController)
+    }
+    
+    deinit {
+        mapViewController.leaveParentViewController()
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,8 +55,22 @@ class ViewController: UIViewController {
         } else {
             searchController.searchBar.y = UIApplication.shared.statusBarFrame.height
         }
+        
+        mapViewController.view.y = searchController.searchBar.maxY
+        mapViewController.view.height = view.height - mapViewController.view.y
     }
     
+}
+
+// MARK: - ResultsViewControllerDelegate
+
+extension ViewController: ResultsViewControllerDelegate {
+    func didSelect(location: Location) {
+        selectedLocation = location
+        mapViewController.location = location
+        searchController.isActive = false
+        isSearching = false
+    }
 }
 
 // MARK: - UISearchBarDelegate {
@@ -75,45 +96,10 @@ extension ViewController: UISearchResultsUpdating {
             switch result {
             case let .success(locations):
                 print("\(locations.count) locations returned")
-                self.locations = locations
-                self.resultsViewController.tableView.reloadData()
+                self.resultsViewController.locations = locations
             case let .error(error):
                 print(error)
             }
         }
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return locations.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell
-        if let dequeued = tableView.dequeueReusableCell(withIdentifier: "cell") {
-            cell = dequeued
-        } else {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-            cell.accessoryType = .disclosureIndicator
-        }
-        
-        let location = locations[indexPath.row]
-        cell.textLabel?.text = location.formattedAddressLines[0]
-        if location.formattedAddressLines.count > 1 {
-            cell.detailTextLabel?.text = location.formattedAddressLines[1]
-        }
-        
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
     }
 }
