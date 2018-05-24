@@ -29,13 +29,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.searchBar.delegate = self
-        searchController.searchResultsUpdater = self
-        view.addSubview(searchController.searchBar)
+        definesPresentationContext = true
         
         resultsViewController.tableView.dataSource = self
         
-        definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+        
+        searchController.searchBar.delegate = self
+        searchController.searchBar.returnKeyType = .done
+        view.addSubview(searchController.searchBar)
     }
     
     override func viewDidLayoutSubviews() {
