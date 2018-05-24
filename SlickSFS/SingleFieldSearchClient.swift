@@ -118,6 +118,8 @@ struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
                     lines.append("\(houseNumber) \(firstStreetName)")
                 } else if !firstStreetName.isEmpty && !secondStreetName.isEmpty {
                     lines.append("\(firstStreetName) & \(secondStreetName)")
+                } else if !firstStreetName.isEmpty {
+                    lines.append(firstStreetName)
                 }
                 
                 if !borough.isEmpty && !zipCode.isEmpty {

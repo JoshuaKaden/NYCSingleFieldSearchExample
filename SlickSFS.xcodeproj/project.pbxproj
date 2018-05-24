@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		26CB55C3DD306BB535725C4C /* Pods_SlickSFS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C672050827680EB66E5291B8 /* Pods_SlickSFS.framework */; };
+		9312320620B71E2200F916F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312320520B71E2200F916F6 /* MapViewController.swift */; };
+		9312320820B71F8C00F916F6 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312320720B71F8C00F916F6 /* ResultsViewController.swift */; };
+		9312320A20B7264000F916F6 /* LocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312320920B7264000F916F6 /* LocationPin.swift */; };
 		935D7F4720B4A8C000F5550B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F4620B4A8C000F5550B /* AppDelegate.swift */; };
 		935D7F4920B4A8C000F5550B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D7F4820B4A8C000F5550B /* ViewController.swift */; };
 		935D7F4C20B4A8C000F5550B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D7F4A20B4A8C000F5550B /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 /* Begin PBXFileReference section */
 		4E850686FED02F961858C920 /* Pods-SlickSFS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlickSFS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS.debug.xcconfig"; sourceTree = "<group>"; };
 		897EBE45F11BE8B1B1E1E7B9 /* Pods-SlickSFS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlickSFS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlickSFS/Pods-SlickSFS.release.xcconfig"; sourceTree = "<group>"; };
+		9312320520B71E2200F916F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9312320720B71F8C00F916F6 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		9312320920B7264000F916F6 /* LocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPin.swift; sourceTree = "<group>"; };
 		935D7F4320B4A8C000F5550B /* SlickSFS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlickSFS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		935D7F4620B4A8C000F5550B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		935D7F4820B4A8C000F5550B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +117,11 @@
 				935D7F5220B4A8C000F5550B /* Info.plist */,
 				935D7F4F20B4A8C000F5550B /* LaunchScreen.storyboard */,
 				935D7F5820B4AA8100F5550B /* Library */,
+				9312320920B7264000F916F6 /* LocationPin.swift */,
 				935D7F4A20B4A8C000F5550B /* Main.storyboard */,
+				9312320520B71E2200F916F6 /* MapViewController.swift */,
+				9312320720B71F8C00F916F6 /* ResultsViewController.swift */,
+				935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */,
 				935D7F4820B4A8C000F5550B /* ViewController.swift */,
 			);
 			path = SlickSFS;
@@ -132,7 +142,6 @@
 				935D7F6520B4ABAE00F5550B /* Result.swift */,
 				935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */,
 				935D7F5920B4AB0C00F5550B /* SimpleAlertModel.swift */,
-				935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */,
 				935D7F6C20B4AC4000F5550B /* String+Range.swift */,
 				935D7F5D20B4AB0C00F5550B /* UIView+Layout.swift */,
 				935D7F5E20B4AB0C00F5550B /* UIViewController+Parenting.swift */,
@@ -267,6 +276,7 @@
 				935D7F6820B4ABAE00F5550B /* Result.swift in Sources */,
 				935D7F7C20B4B09200F5550B /* ErrorConstant.swift in Sources */,
 				935D7F6A20B4ABAE00F5550B /* Location.swift in Sources */,
+				9312320620B71E2200F916F6 /* MapViewController.swift in Sources */,
 				935D7F7920B4AFBB00F5550B /* LocationValidatorProtocol.swift in Sources */,
 				935D7F6920B4ABAE00F5550B /* NetworkClient.swift in Sources */,
 				935D7F7420B4AD8900F5550B /* AirportProtocol.swift in Sources */,
@@ -277,9 +287,11 @@
 				935D7F4720B4A8C000F5550B /* AppDelegate.swift in Sources */,
 				935D7F6E20B4AC4000F5550B /* String+Range.swift in Sources */,
 				935D7F5F20B4AB0C00F5550B /* SimpleAlertModel.swift in Sources */,
+				9312320A20B7264000F916F6 /* LocationPin.swift in Sources */,
 				935D7F6120B4AB0C00F5550B /* SingleFieldSearchClient.swift in Sources */,
 				935D7F6320B4AB0C00F5550B /* UIView+Layout.swift in Sources */,
 				935D7F6420B4AB0C00F5550B /* UIViewController+Parenting.swift in Sources */,
+				9312320820B71F8C00F916F6 /* ResultsViewController.swift in Sources */,
 				935D7F6220B4AB0C00F5550B /* UIViewController+SimpleAlert.swift in Sources */,
 				935D7F6D20B4AC4000F5550B /* Coordinate.swift in Sources */,
 				935D7F7220B4AD8900F5550B /* JFKAirportLocationValidator.swift in Sources */,
