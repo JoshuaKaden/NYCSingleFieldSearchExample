@@ -17,8 +17,8 @@ protocol SingleFieldSearchClientProtocol {
 typealias SingleFieldSearchCompletionAction = (Result<[Location]>) -> Void
 
 struct SingleFieldSearchClient: SingleFieldSearchClientProtocol {
-    fileprivate let appID = "aece611a"
-    fileprivate let appKey = "88b12a0aeec471190fce20246414a65d"
+    fileprivate let appID = "f1ff782e"
+    fileprivate let appKey = "2515c71697e4b2d6f8039919c9bdc332"
     fileprivate let networkClient: NetworkClientProtocol
     fileprivate let urlString = "search.json"
     
