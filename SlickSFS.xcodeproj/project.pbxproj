@@ -112,6 +112,7 @@
 				935D7F4F20B4A8C000F5550B /* LaunchScreen.storyboard */,
 				935D7F5820B4AA8100F5550B /* Library */,
 				935D7F4A20B4A8C000F5550B /* Main.storyboard */,
+				935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */,
 				935D7F4820B4A8C000F5550B /* ViewController.swift */,
 			);
 			path = SlickSFS;
@@ -132,7 +133,6 @@
 				935D7F6520B4ABAE00F5550B /* Result.swift */,
 				935D7F5A20B4AB0C00F5550B /* SimpleAlertActionModel.swift */,
 				935D7F5920B4AB0C00F5550B /* SimpleAlertModel.swift */,
-				935D7F5B20B4AB0C00F5550B /* SingleFieldSearchClient.swift */,
 				935D7F6C20B4AC4000F5550B /* String+Range.swift */,
 				935D7F5D20B4AB0C00F5550B /* UIView+Layout.swift */,
 				935D7F5E20B4AB0C00F5550B /* UIViewController+Parenting.swift */,

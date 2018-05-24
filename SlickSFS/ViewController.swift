@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var isSearching = false
     private var locations: [Location] = []
     private let resultsViewController = UITableViewController()
     private let searchController: UISearchController
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         view.addSubview(searchController.searchBar)
         
@@ -36,11 +38,37 @@ class ViewController: UIViewController {
         definesPresentationContext = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if isSearching {
+            searchController.searchBar.y = 0
+        } else {
+            searchController.searchBar.y = UIApplication.shared.statusBarFrame.height
+        }
+    }
+    
 }
+
+// MARK: - UISearchBarDelegate {
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearching = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+}
+
+// MARK: - UISearchResultsUpdating
 
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        singleFieldSearchClient.performSingleFieldSearch(searchController.searchBar.text) {
+        guard let text = searchController.searchBar.text else { return }
+        let searchString = "\(text)"
+        singleFieldSearchClient.performSingleFieldSearch(searchString) {
             result in
             switch result {
             case let .success(locations):
@@ -53,6 +81,8 @@ extension ViewController: UISearchResultsUpdating {
         }
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,6 +107,8 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
